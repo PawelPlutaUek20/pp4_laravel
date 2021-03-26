@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Opening;
 
 class VariationController extends Controller
 {
     public function index(){
 
-        return view('create');
+        return view('create', [
+            'opening' => Opening::get(),
+        ]);
     }
 
     public function store(){
@@ -19,16 +22,10 @@ class VariationController extends Controller
             'pgn' => 'required'
         ]);
 
-        $opening = \App\Models\Opening::firstOrCreate(array('name' => $data['opening_name']));
+        $opening = Opening::firstOrCreate(array('name' => $data['opening_name']));
         
         $opening->variations()->create($data);
 
-        return back();
-
-        // $variation = \App\Models\Variation::create($data);
-
-        // $variation->opening()->create($data);
-
-        // return back();
+        return redirect('/opening');
     }
 }

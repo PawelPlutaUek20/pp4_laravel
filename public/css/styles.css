@@ -1,0 +1,228 @@
+#myBoard {
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    width: 100%;
+    text-align: center;
+    color: #f1f1f1;
+  }
+  
+  .active,
+  .row:hover {
+    background-color: #666 !important;
+    color: white;
+  }
+  html {
+    font-size: 22px;
+  }
+  
+  body {
+    background-color: #2d2d2d;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    height: 97.5vh;
+    align-content: stretch;
+  }
+  .header {
+    grid-column: span 12;
+  }
+  .navigation-menu {
+    grid-column: span 4;
+    background-color: rgb(35, 35, 35);
+    width: 70%;
+    height: 90%;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-areas:
+      "variation"
+      "variation"
+      "moves"
+      "moves"
+      "action";
+  }
+  
+  .main-content {
+    grid-column: span 8;
+  }
+  .moves {
+    grid-area: moves;
+  }
+  .action {
+    grid-area: action;
+    width: 100%;
+    align-items: center;
+    display: flex;
+  }
+  .action button {
+    height: 25%;
+    width: 25%;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: larger;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .navigation-menu {
+      grid-column: span 12;
+      margin: 0 auto;
+      width: 60%;
+    }
+    .action button {
+      height: 100%;
+      width: 25%;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    .main-content {
+      grid-column: span 12;
+    }
+  }
+  .pgn {
+    margin: 0 auto;
+    padding: 10%;
+    color: rgb(180, 180, 180);
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+  }
+  .variation {
+    height: 100%;
+    padding: 10px;
+    border-radius: 1rem;
+  }
+  .row {
+    text-align: center;
+    height: max-content;
+    display: flex !important;
+    align-items: baseline;
+    cursor: pointer;
+    background-color: rgb(50, 50, 50);
+  }
+  h3 {
+    font-size: 0.75em;
+    line-height: 1;
+    margin: 1em 1.7em;
+    font-weight: normal;
+    color: rgb(180, 180, 180);
+  }
+  .row span {
+    flex: 0 0 1.7em;
+    justify-content: center;
+    color: rgb(54, 146, 231);
+    font-weight: bold;
+    margin-top: 0.4em;
+    opacity: 0.8;
+    display: flex;
+  }
+  
+  ul {
+    font-size: 70%;
+    column-count: 2;
+  }
+  
+  .card {
+    background-color: rgb(35, 35, 35);
+    color: rgb(180, 180, 180);
+    padding: 1rem;
+    height: 4rem;
+    border: 1px solid #404040;
+  }
+  
+  .cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+  }
+  
+  @media (min-width: 600px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .cards input {
+    display: none;
+  }
+  
+  textarea {
+    width: 80% !important;
+    resize: none;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(180, 180, 180);
+    border: none;
+  }
+  
+  .openingName {
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 5%;
+  }
+  
+  .openingName input {
+    width: 60%;
+    text-align: center;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+  
+  .openingName label {
+    color: #f1f1f1;
+  }
+  
+  .back,
+  .add {
+    height: 50% !important;
+  }
+  
